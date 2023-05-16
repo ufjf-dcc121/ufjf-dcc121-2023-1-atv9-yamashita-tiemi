@@ -9,6 +9,9 @@
         div {
             padding: 5px;
         }
+        p > span {
+            color: darkgreen;
+        }
     </style>
 </head>
 <body>
@@ -40,13 +43,14 @@
             <!-- <input type="submit"> -->
             <!-- <input type="reset"> -->
         </form>
-        <p>Olá <span></span>!</p>
+        <p></p>
     </main>
     <script>
         const form = document.querySelector("form");
         form.addEventListener("submit", enviando);
 
         const p = document.querySelector("span");
+        const p1 = document.querySelector("p");
 
         function enviando(event) {
             event.preventDefault();
@@ -57,7 +61,11 @@
             const complete_name = `${first_name} ${last_name}, ${age} anos`;
             console.log(complete_name);
             // p.innerText = `${complete_name}`;
-            p.textContent = complete_name;
+            // p.textContent = complete_name;
+            p1.innerHTML = `Olá <span>${complete_name}</span>!`;
+
+            form.reset();
+            form.first_name.focus();
         }
 
     </script>
