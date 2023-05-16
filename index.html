@@ -71,12 +71,32 @@
             form.reset();
             form.first_name.focus();
 
-            add_person(complete_name);
+            add_person(first_name, last_name, age);
         }
 
-        function add_person(text) {
+        function add_person(first_name, last_name, age) {
             const li = document.createElement('li');
-            li.textContent = text;
+            // li.textContent = text;
+            const div_person = document.createElement('div');
+            div_person.classList.add("pessoa");
+
+            const span_first_name = document.createElement('div');
+            span_first_name.classList.add("first_name");
+            span_first_name.textContent = first_name;
+            div_person.appendChild(span_first_name);
+
+            const span_last_name = document.createElement('div');
+            span_last_name.classList.add("last_name");
+            span_last_name.textContent = last_name;
+            div_person.appendChild(span_last_name);
+            
+            const span_age = document.createElement('div');
+            span_age.classList.add("age");
+            span_age.textContent = age;
+            div_person.appendChild(span_age);
+
+
+            li.appendChild(div_person);
             console.log(li);
             ol.appendChild(li);
         }
