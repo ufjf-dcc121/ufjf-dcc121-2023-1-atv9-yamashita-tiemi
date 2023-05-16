@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 9 - Forms</title>
     <style>
-        
+        div {
+            padding: 5px;
+        }
     </style>
 </head>
 <body>
@@ -25,11 +27,18 @@
             </div>
             <div>
                 <label for="age">Idade:</label>
-                <input type="text" name="age">
+                <input type="number" name="age">
+            </div>
+            <div class="button">
+                <button type="submit">Enviar</button>
+                <button type="reset">Redefinir</button>
             </div>
 
-            <input type="submit">
-            <input type="reset">
+            <!-- <input type="text" name="first_name"> -->
+            <!-- <input type="text" name="last_name"> -->
+            <!-- <input type="text" name="age"> -->
+            <!-- <input type="submit"> -->
+            <!-- <input type="reset"> -->
 
             
         </form>
@@ -41,6 +50,11 @@
         function enviando(event) {
             event.preventDefault();
             console.log("Hello, form!");
+            const first_name = form.first_name.value;
+            const last_name = form.last_name.value;
+            const age = form.age.valueAsNumber;
+            const complete_name = `${first_name} ${last_name}, ${age} anos`;
+            console.log(complete_name);
         }
     </script>
 </body>
