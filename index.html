@@ -44,13 +44,17 @@
             <!-- <input type="reset"> -->
         </form>
         <p></p>
+        <h2>Visitas passadas:</h2>
+        <ol reversed></ol>
     </main>
     <script>
         const form = document.querySelector("form");
         form.addEventListener("submit", enviando);
 
-        const p = document.querySelector("span");
-        const p1 = document.querySelector("p");
+        const span = document.querySelector("span");
+        const p = document.querySelector("p");
+
+        const ol = document.querySelector("ol");
 
         function enviando(event) {
             event.preventDefault();
@@ -58,14 +62,23 @@
             const first_name = form.first_name.value;
             const last_name = form.last_name.value;
             const age = form.age.valueAsNumber;
-            const complete_name = `${first_name} ${last_name}, ${age} anos`;
+            const complete_name = `${first_name} ${last_name} - ${age} anos`;
             console.log(complete_name);
-            // p.innerText = `${complete_name}`;
-            // p.textContent = complete_name;
-            p1.innerHTML = `Olá <span>${complete_name}</span>!`;
+            // span.innerText = `${complete_name}`;
+            // span.textContent = complete_name;
+            p.innerHTML = `Olá <span>${complete_name}</span>!`;
 
             form.reset();
             form.first_name.focus();
+
+            add_person(complete_name);
+        }
+
+        function add_person(text) {
+            const li = document.createElement('li');
+            li.textContent = text;
+            console.log(li);
+            ol.appendChild(li);
         }
 
     </script>
