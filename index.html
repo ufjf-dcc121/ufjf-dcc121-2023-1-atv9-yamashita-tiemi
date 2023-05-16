@@ -39,13 +39,14 @@
             <!-- <input type="text" name="age"> -->
             <!-- <input type="submit"> -->
             <!-- <input type="reset"> -->
-
-            
         </form>
+        <p>Olá <span></span>!</p>
     </main>
     <script>
         const form = document.querySelector("form");
         form.addEventListener("submit", enviando);
+
+        const p = document.querySelector("span");
 
         function enviando(event) {
             event.preventDefault();
@@ -55,7 +56,10 @@
             const age = form.age.valueAsNumber;
             const complete_name = `${first_name} ${last_name}, ${age} anos`;
             console.log(complete_name);
+            // p.innerText = `${complete_name}`;
+            p.textContent = complete_name;
         }
+
     </script>
 </body>
 </html>
