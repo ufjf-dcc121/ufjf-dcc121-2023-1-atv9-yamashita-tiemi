@@ -12,6 +12,16 @@
         p > span {
             color: darkgreen;
         }
+        .pessoa {
+            color: mediumvioletred;
+        }
+        .pessoa  > div{
+            display: inline;
+        }
+        .age {
+            color: blueviolet;
+            margin-left: 50px;
+        }
     </style>
 </head>
 <body>
@@ -36,16 +46,10 @@
                 <button type="submit">Enviar</button>
                 <button type="reset">Redefinir</button>
             </div>
-
-            <!-- <input type="text" name="first_name"> -->
-            <!-- <input type="text" name="last_name"> -->
-            <!-- <input type="text" name="age"> -->
-            <!-- <input type="submit"> -->
-            <!-- <input type="reset"> -->
         </form>
         <p></p>
         <h2>Visitas passadas:</h2>
-        <ol reversed></ol>
+        <ol></ol>
     </main>
     <script>
         const form = document.querySelector("form");
